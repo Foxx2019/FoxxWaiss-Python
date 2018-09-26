@@ -1,7 +1,12 @@
 def main():
+    numList1 = [93.4, 86.8, 98.2, 89.9, 79.4, 94.6]
     gradeIn = input("what year are you in? - ")
     grade1 = int(gradeIn)
     print("you are " + grade(grade1))
+    print("your current average score is " + str(getGradeAverage(numList1)))
+    print("your current letter grade is " + str(getLetterGrade(getGradeAverage(numList1))))
+    if (getLetterGrade == "A") or (getLetterGrade == "B") or (getLetterGrade == "B"):
+        print("whoop whoop, you pass")
 
 
 def grade(gradeIn):
@@ -16,9 +21,25 @@ def grade(gradeIn):
     else:
         return("not in highschool you silly goose!")
 
-numList = [93.4, 86.8, 98.2, 89.9, 79.4, 94.6]
+
+def getGradeAverage(numList1):
+    numList1 = [93.4, 86.8, 98.2, 89.9, 79.4, 94.6]
+    average = sum(numList1) / float(len(numList1))
+    return(average)
 
 
+def getLetterGrade(getGradeAverage):
+    if getGradeAverage >= 90:
+        letterGrade = ("A")
+    elif getGradeAverage >= 80:
+        letterGrade = ("B")
+    elif getGradeAverage >= 70:
+        letterGrade = ("C")
+    elif getGradeAverage >= 60:
+        letterGrade = ("D")
+    else:
+        letterGrade = ("F")
+    return(letterGrade)
 
 
 
