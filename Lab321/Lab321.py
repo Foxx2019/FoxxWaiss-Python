@@ -16,8 +16,9 @@ def grade(gradeIn):
     else:
         return("not in highschool you silly goose!")
 
-numList = [93.4, 86.8, 98.2, 89.9, 79.4, 94.6]
 
+myList1 = [93.4, 86.8, 98.2, 89.9, 79.4, 94.6]
+print(len(myList1))
 
 
 
