@@ -4,9 +4,7 @@ def main():
     grade1 = int(gradeIn)
     print("you are " + grade(grade1))
     print("your current average score is " + str(getGradeAverage(numList1)))
-    print("your current letter grade is " + str(getLetterGrade(getGradeAverage(numList1))))
-    if (getLetterGrade == "A") or (getLetterGrade == "B") or (getLetterGrade == "B"):
-        print("whoop whoop, you pass")
+    print("your " + str(getLetterGrade(getGradeAverage(numList1))))
 
 
 def grade(gradeIn):
@@ -23,23 +21,23 @@ def grade(gradeIn):
 
 
 def getGradeAverage(numList1):
-    numList1 = [93.4, 86.8, 98.2, 89.9, 79.4, 94.6]
     average = sum(numList1) / float(len(numList1))
     return(average)
 
 
 def getLetterGrade(getGradeAverage):
     if getGradeAverage >= 90:
-        letterGrade = ("A")
+        return("Have an A ")
     elif getGradeAverage >= 80:
-        letterGrade = ("B")
+        return("Have a B")
     elif getGradeAverage >= 70:
-        letterGrade = ("C")
+        return("Have a C")
     elif getGradeAverage >= 60:
-        letterGrade = ("D")
+        return("Have a D")
     else:
-        letterGrade = ("F")
-    return(letterGrade)
+        return("Have an F")
+
+
 
 
 
