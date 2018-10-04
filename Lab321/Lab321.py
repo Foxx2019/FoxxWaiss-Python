@@ -21,8 +21,13 @@ def grade(gradeIn):
 
 
 def getGradeAverage(numList1):
-    average = sum(numList1) / float(len(numList1))
+    print(numList1)
+    gTotal = 0
+    for x in numList1:
+        gTotal = gTotal + x
+    average = gTotal / len(numList1)
     return(average)
+
 
 
 def getLetterGrade(getGradeAverage):
