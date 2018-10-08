@@ -3,6 +3,7 @@ def main():
     gradeIn = input("what year are you in? - ")
     grade1 = int(gradeIn)
     print("you are " + grade(grade1))
+    print(numList1)
     print("your current average score is " + str(getGradeAverage(numList1)))
     print("your " + str(getLetterGrade(getGradeAverage(numList1))))
 
@@ -21,7 +22,6 @@ def grade(gradeIn):
 
 
 def getGradeAverage(numList1):
-    print(numList1)
     gTotal = 0
     for x in numList1:
         gTotal = gTotal + x
