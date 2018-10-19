@@ -1,30 +1,49 @@
-def draw7():
-    for i in range(0,7):
-        starLoops()
+def main():
+    star(7)
+    print()
+    stripStar(3,7)
+    print()
+    pyramid(7)
+    print()
+    box(4,7)
 
+def star(nums):
+    for i in range(nums):
+        starStr = ''
+        for i in range(nums):
+            starStr += '* '
+        print(starStr)
 
-def starLoops():
-    for i in range(0,7):
-        starString = ''
-        for i in range(0,7):
-            starString = (starString + '*')
-    print(starString)
+def stripStar(height, width):
+    for i in range(height):
+        starStr = ''
+        stripStr = ''
+        for j in range(width):
+            starStr += '* '
+            stripStr += '- '
+        print(starStr)
+        print(stripStr)
 
-draw7()
+def pyramid(num):
+    for i in range(num):
+        for j in range(i):
+            print(str(i), end = '')
+        print()
+    for k in range(num,0,-1):
+        for j in range(k):
+            print(str(k), end = '')
+        print()
 
-input('pause')
+def box(height, width):
+    for j in range(width):
+        print('*', end = '')
+    print()
+    for l in range(height):
+        print('*', end = '')
+        for k in range(width-2):
+            print('-', end = '')
+        print('*')
+    for j in range(width):
+        print('*', end = '')
 
-
-def starsAndStripes():
-    for i in range(0,3):
-        string1 = ''
-        string2 = ''
-        for i in range (0,7):
-            string1 = (string1 + '*')
-            string2 = (string2 + '-')
-        print(string1)
-        print(string2)
-
-starsAndStripes()
-
-#def incTriangle():
+main()
