@@ -1,50 +1,55 @@
 def main():
-    l = [0, 69.3, 56.3, 23.4]
-    length = len(l)
-    print('Bellarmine point grade average')
-    gradelevel = input('what grade are you in? ')
-    print('congrats you are ' + str(yearInSchool(gradelevel)))
-    calcGPA = getGPA(l,length)
-    grade = getlettergrade(calcGPA)
-    print('you GPA is ' + str(calcGPA))
-    print('your current letter grade is ' + str(grade))
-    if grade == ('D') or grade == ('F'):
-        print('you failed')
+    #grades = [86.8,67.6,98.9,92.1]
+    num = int(input("How many grades? - "))
+    grades = getGrade(num)
+    average = Grade(grades)
+    school = input("What school do you go to? - ")
+    print(school, "Student")
+    year = int(input("What grade are you in? - "))
+    print("You are", Year(year))
+    if 8 < year < 13:
+        print("Your average grade is", average)
+        print("Your letter grade is", Letter(average))
+
+def getGrade(num):
+    grades = []
+    for i in range(num):
+        myNum = float(input("What is the grade? - "))
+        grades.append(myNum)
+    return grades
+
+def Grade(grades):
+    average = 0
+    for i in range(len(grades)):
+        average = average + float(grades[i])
+    return average/len(grades)
+
+def Year(year):
+    if year == 9:
+        strYear = "a Freshman"
+    elif year == 10:
+        strYear = "a Sophomore"
+    elif year == 11:
+        strYear = "a Junior"
+    elif year == 12:
+        strYear = "a Senior"
     else:
-        print('you passed')
+        strYear = "not in high school"
+    return strYear
 
-
-def yearInSchool(gradelevel):
-    if gradelevel == 9:
-        longGrade = ('a Freshman')
-    elif gradelevel == 10:
-        longGrade = ('a Sophmore')
-    elif gradelevel == 11:
-        longGrade = ('a Junior')
-    elif gradelevel == 12:
-        longGrade = ('a Senior')
+def Letter(average):
+    if average > 90:
+        letterGrade = "A"
+    elif average > 80:
+        letterGrade = "B"
+    elif average > 70:
+        letterGrade = "C"
+    elif average > 60:
+        letterGrade = "D"
+    elif 0 <= average < 59:
+        letterGrade = "F"
     else:
-        longGrade = ('not in Highschool')
-    return(longGrade)
-
-def getGPA(myL,MyLength):
-    gpa = float("0")
-    for x in myL:
-        gpa = float(gpa + (x))
-    gpa = ((gpa) / len(myL))
-    return(gpa)
-
-def getlettergrade(getGPA):
-    if getGPA >= 90:
-        lettergrade = ('A')
-    elif getGPA >= 80:
-        lettergrade = ("B")
-    elif getGPA >= 70:
-        lettergrade = ("C")
-    elif getGPA >= 60:
-        lettergrade = ("D")
-    else:
-        lettergrade = ("F")
-    return (lettergrade)
+        letterGrade = "Please enter valid numbers"
+    return letterGrade
 
 main()
