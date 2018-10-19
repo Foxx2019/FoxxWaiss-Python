@@ -1,20 +1,20 @@
 def main():
-    star(7)
-    print()
-    stripStar(3,7)
-    print()
-    pyramid(7)
-    print()
-    box(4,7)
+    draw7(7)
+    input('pause')
+    starsAndStripes(3,7)
+    input('pause')
+    incTriangle(7)
+    input('pause')
 
-def star(nums):
+
+def draw7(nums):
     for i in range(nums):
         starStr = ''
         for i in range(nums):
             starStr += '* '
         print(starStr)
 
-def stripStar(height, width):
+def starsAndStripes(height, width):
     for i in range(height):
         starStr = ''
         stripStr = ''
@@ -24,7 +24,7 @@ def stripStar(height, width):
         print(starStr)
         print(stripStr)
 
-def pyramid(num):
+def incTriangle(num):
     for i in range(num):
         for j in range(i):
             print(str(i), end = '')
@@ -34,16 +34,6 @@ def pyramid(num):
             print(str(k), end = '')
         print()
 
-def box(height, width):
-    for j in range(width):
-        print('*', end = '')
-    print()
-    for l in range(height):
-        print('*', end = '')
-        for k in range(width-2):
-            print('-', end = '')
-        print('*')
-    for j in range(width):
-        print('*', end = '')
+
 
 main()
