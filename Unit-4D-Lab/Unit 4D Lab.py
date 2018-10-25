@@ -22,8 +22,11 @@ def allInOne(cart):
 def countQtips(cart):
     newList2 = []
     count = 0
+#starts the new list of with a count of 0
     for list in cart:
+#goes into the 3 lists in shoppingCart
         for item in list:
+#goes into the contents of each list
             if item not in cart:
                 newList2.append(item)
     for i in range(len(newList2)):
