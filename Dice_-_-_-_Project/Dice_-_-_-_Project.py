@@ -1,10 +1,14 @@
 import random
 
+def main():
+    print(randNum)
+    print(diceSelect)
+
 
 
 def randNum():
     x = random.randint(1,6)
-    print(x)
+    return (x)
 
 
 
@@ -50,3 +54,19 @@ def diceSix():
     print('| *   * |')
     print(' ------- ')
 
+
+def diceSelect():
+    if randNum == 1:
+        print(diceOne)
+    if randNum == 2:
+        print(diceTwo)
+    if randNum == 3:
+        print(diceThree)
+    if randNum == 4:
+        print(diceFour)
+    if randNum == 5:
+        print(diceFive)
+    if randNum == 6:
+        print(diceSix)
+
+main()
