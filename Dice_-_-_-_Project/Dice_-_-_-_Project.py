@@ -1,72 +1,50 @@
-import random
+from random import *
 
-def main():
-    print(randNum)
-    print(diceSelect)
+def dice () :
+    loop = 'y'
+    times = 0
+    while loop=='y' :
+        times = times + 1
+        y = randNum ()
+        print(whichDice(y))
+        print ("You rolled a - " + str(y))
+        loop = input ("Would you like this to run again? (y/n) - ")
+        print ("You have played " + str(times) + " times.")
 
 
-
-def randNum():
-    x = random.randint(1,6)
+def randNum () :
+    x = randint(1,6)
     return (x)
 
+def whichDice (randnum) :
+    a = ' ------- '
+
+    if randnum==1 or randnum==2 :
+        b = '|       |'
+    elif randnum==3 :
+        b = '|   *   |'
+    elif randnum==4 or randnum==5 or randnum==6 :
+        b = '| *  *  |'
+
+    if randnum==1 or randnum==3 or randnum==5 :
+        c = '|   *   |'
+    elif randnum==4 :
+        c = '|       |'
+    elif randnum==2 or randnum==6 :
+        c = '| *  *  |'
+        
+    if randnum==1 or randnum==2 :
+        d = '|       |'
+    elif randnum==3 :
+        d = '|   *   |'
+    elif randnum==4 or randnum==5 or randnum==6 :
+        d = c = '| *  *  |'
+
+    e = ' ------- '
+
+    return(a + "\n" + b + "\n" + c + "\n" + d + "\n" + e)
 
 
-def diceOne():
-    print(' ------- ')
-    print('|       |')
-    print('|   *   |')
-    print('|       |')
-    print(' ------- ')
-
-def diceTwo():
-    print(' ------- ')
-    print('|       |')
-    print('|  * *  |')
-    print('|       |')
-    print(' ------- ')
-
-def diceThree():
-    print(' ------- ')
-    print('| *     |')
-    print('|   *   |')
-    print('|     * |')
-    print(' ------- ')
-
-def diceFour():
-    print(' ------- ')
-    print('| *   * |')
-    print('|       |')
-    print('| *   * |')
-    print(' ------- ')
-
-def diceFive():
-    print(' ------- ')
-    print('| *   * |')
-    print('|   *   |')
-    print('| *   * |')
-    print(' ------- ')
-
-def diceSix():
-    print(' ------- ')
-    print('| *   * |')
-    print('| *   * |')
-    print('| *   * |')
-    print(' ------- ')
 
 
-def diceSelect():
-    if randNum == 1:
-        print(diceOne)
-    if randNum == 2:
-        print(diceTwo)
-    if randNum == 3:
-        print(diceThree)
-    if randNum == 4:
-        print(diceFour)
-    if randNum == 5:
-        print(diceFive)
-    if randNum == 6:
-        print(diceSix)
-
-main()
+dice ()
