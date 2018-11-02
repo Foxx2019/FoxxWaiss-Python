@@ -1,32 +1,49 @@
 import random
 
-def main():
+def dice () :
+    loop = 'y'
+    times = 0
+    while loop =='y' :
+        times = times + 1
+        y = randNum ()
+        print(whichDice(y))
+        print ("You just rolled  - " + str(y))
+        loop = input ("Would you like to play again? (y/n) - ")
+        print ("You have played " + str(times) + " times.")
 
 
 
-def bigDice():
-    dice = [0] * 6
-    topL = ' ------- '
-    blank = '|       |'
-    oneL =  '| *     | '
-    oneM =  '|   *   |'
-    oneR =  '|     * |'
-    twoM =  '| *   * |'
-    one =   [topL, blank, oneM, blank, topL]
-    two =   [topL, oneL, blank, oneR, topL]
-    three = [topL, oneL, oneM, oneR, topL]
-    four =  [topL, twoM, blank, twoM, topL]
-    five =  [topL, twoM, oneM, twoM, topL]
-    six =   [topL, twoM, twoM, twoM, topL]
+def randNum () :
+    x = random.randint(1,6)
+    return (x)
+
+def whichDice (randnum) :
+    a = ' ------- '
+
+    if randnum==1 or randnum==2 :
+        b = '|       |'
+    elif randnum==3 :
+        b = '|   *   |'
+    elif randnum==4 or randnum==5 or randnum==6 :
+        b = '| *  *  |'
+
+    if randnum==1 or randnum==3 or randnum==5 :
+        c = '|   *   |'
+    elif randnum==4 :
+        c = '|       |'
+    elif randnum==2 or randnum==6 :
+        c = '| *  *  |'
+
+    if randnum==1 or randnum==2 :
+        d = '|       |'
+    elif randnum==3 :
+        d = '|   *   |'
+    elif randnum==4 or randnum==5 or randnum==6 :
+        d = c = '| *  *  |'
+
+    e = ' ------- '
+
+    return(a + "\n" + b + "\n" + c + "\n" + d + "\n" + e)
 
 
-
-
-
-
-
-def randInt():
-    x = random.randint(0,6)
-    print (x)
-
-roleDice()
+dice()
