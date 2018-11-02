@@ -13,6 +13,7 @@ def dice () :
 
 
 
+
 def randNum () :
     x = random.randint(1,6)
     return (x)
@@ -25,21 +26,21 @@ def whichDice (randnum) :
     elif randnum==3 :
         b = '|   *   |'
     elif randnum==4 or randnum==5 or randnum==6 :
-        b = '| *  *  |'
+        b = '| *   * |'
 
     if randnum==1 or randnum==3 or randnum==5 :
         c = '|   *   |'
     elif randnum==4 :
         c = '|       |'
     elif randnum==2 or randnum==6 :
-        c = '| *  *  |'
+        c = '| *   * |'
 
     if randnum==1 or randnum==2 :
         d = '|       |'
     elif randnum==3 :
         d = '|   *   |'
     elif randnum==4 or randnum==5 or randnum==6 :
-        d = c = '| *  *  |'
+        d = '| *   * |'
 
     e = ' ------- '
 
