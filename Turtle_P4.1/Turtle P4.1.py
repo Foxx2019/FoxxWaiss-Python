@@ -3,9 +3,11 @@ import turtle as t
 def rosette():
     t.speed(0)
     t.bgcolor('black')
-    circle1()
-    circle2()
     circle3()
+    circle2()
+    circle1()
+
+
     t.exitonclick()
 
 
