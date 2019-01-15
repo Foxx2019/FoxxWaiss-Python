@@ -1,5 +1,5 @@
 import random
-DICENUM = 2
+DICENUM = 8
 def main():
     count = 0
     play = input('Want to play a game? (y/n)- ')
@@ -16,7 +16,7 @@ def main():
         count += 1
         play = input('Wanna play a game?- ')
     print('you have played ', count, 'times')
-#puts everything together
+
 
 def constructDice():
     topBottom = ' ------- '
@@ -33,7 +33,7 @@ def constructDice():
     Six =   [topBottom, middleTwo, middleTwo, middleTwo, topBottom]
     allDice = [One, Two, Three, Four, Five, Six]
     return allDice
-#makes each individual dice
+
 
 def numberCount(countDice):
     count1 = 0
@@ -57,17 +57,17 @@ def numberCount(countDice):
            count5 += 1
         if countDice[i] == 6:
            count6 += 1
-#keeps count of how many games you've played
+
 
 def dicePrint(allDice):
     for dice in range(len(allDice[0])):
         for side in range(len(allDice)):
             print(allDice[side][dice], end = '\t')
         print()
-#prints the die side by side
+
 
 def randInt():
     return random.randint(0, 5)
-#generates a random number
+
 
 main()
